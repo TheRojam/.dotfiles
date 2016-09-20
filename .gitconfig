@@ -1,0 +1,42 @@
+[user]
+	email = anton.mueller@eccenca.com
+	name = Anton Mueller
+[core]
+	excludesfile = /Users/amueller/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[gui]
+	recentrepo = /Users/amueller/git_repo/data-integration
+[commit]
+	template = /Users/amueller/.stCommitMsg
+[alias]
+## pulling
+	# git p: pulls all branches, autostashing and rebasing instead of merging
+	# 	this is a similiar behaviour to git-up
+	p = pull --rebase --autostash --all --verbose --no-recurse-submodules
+	# git smiu: update all submodules recursively (and init them if necessary)
+	smiu = submodule update --init --recursive
+	# git up: update current project
+	up = "!git p && git smiu"
+
+## repository maintenance
+	# git purge: remove local branches that have been merged into develop
+	purge = "!git merged > /dev/null && git merged | xargs -n 1 git branch -d || echo No merged branches found locally"
+	# git purge-remote: remove remote branches that have been merged into develop
+	purge-remote = "!git merged-remote > /dev/null && git merged-remote | cut -d\"/\" -f 2- | xargs -n 1 git push origin --delete || echo No merged branches found on remote"
+
+## investigating
+	# git merged: list all local branches that have been merged into develop
+	merged = "!git branch --merged develop | grep -Ev \"(\\*|master|develop)\""
+	# git merged-remote: list all remote branches that have been merged into develop
+	merged-remote = "!git branch -r --merged develop | grep -Ev \"(\\*|master|develop)\""
+[tag]
+	sort = version:refname
+[versionsort]
+	prereleaseSuffix = -pre
+	prereleaseSuffix = -rc
+	prereleaseSuffix = -RC1
