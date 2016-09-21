@@ -41,3 +41,7 @@ Thumbs.db
 
 ## kdiff3 files ##
 *.orig
+
+# personal files ignore #
+#######################
+bugs.feature
