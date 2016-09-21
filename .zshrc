@@ -1,7 +1,17 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/amueller/.oh-my-zsh
+
+##zplug config && packages
 
 source ~/.zplug/init.zsh
+zplug "zplug/zplug"
+zplug "robbyrussell/oh-my-zsh"
+# zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:*.zsh-theme
+
+
+
+##oh-my-zsh config
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/amueller/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
