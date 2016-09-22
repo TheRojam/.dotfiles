@@ -45,3 +45,6 @@ Thumbs.db
 # personal files ignore #
 #######################
 bugs.feature
+
+# temp ignore #
+.gitlab/

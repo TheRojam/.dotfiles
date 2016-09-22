@@ -1,0 +1,49 @@
+Host uberspace.de
+
+   HostName suhail.uberspace.de
+
+   Port 22
+
+   User therojam
+
+  IdentityFile ~/.ssh/id_ubernauten
+
+Host menet-studios.de
+
+   HostName menet-studios.de
+
+   Port 22
+
+   User root
+
+  IdentityFile ~/.ssh/id_rsa
+
+Host arch.local
+
+   HostName 192.168.178.77
+
+   Port 22
+
+   User therojam
+
+  IdentityFile ~/.ssh/id_rsa
+
+Host dach-pfueller.de
+
+  HostName dach-pfueller.de
+
+ Port 22
+
+ User ssh-486335-anton
+
+IdentityFile ~/.ssh/id_rsa
+
+Host ubuntu-server
+
+  HostName 127.0.0.1
+
+  Port 3022
+
+  User amueller
+
+IdentityFile ~/.ssh/id_rsa
