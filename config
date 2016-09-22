@@ -18,16 +18,6 @@ Host menet-studios.de
 
   IdentityFile ~/.ssh/id_rsa
 
-Host arch.local
-
-   HostName 192.168.178.77
-
-   Port 22
-
-   User therojam
-
-  IdentityFile ~/.ssh/id_rsa
-
 Host dach-pfueller.de
 
   HostName dach-pfueller.de
@@ -38,6 +28,7 @@ Host dach-pfueller.de
 
 IdentityFile ~/.ssh/id_rsa
 
+#vm with ubuntu "server"
 Host ubuntu-server
 
   HostName 127.0.0.1
@@ -47,3 +38,14 @@ Host ubuntu-server
   User amueller
 
 IdentityFile ~/.ssh/id_rsa
+
+#arch.local is the thinkpad of anton
+Host arch.local
+
+   HostName 192.168.178.77
+
+   Port 22
+
+   User therojam
+
+  IdentityFile ~/.ssh/id_rsa
