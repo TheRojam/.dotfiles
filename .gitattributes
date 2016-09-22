@@ -1,0 +1,2 @@
+#config is ssh config which is crypted for security on public github repo
+config filter=git-crypt diff=git-crypt
