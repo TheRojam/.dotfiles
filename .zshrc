@@ -114,4 +114,7 @@ export NVM_DIR="/Users/amueller/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#alias vi="/usr/local/Cellar/vim"
+
+alias start-ecc-dev="docker-machine start ecc-dev"
+alias stop-ecc-dev="docker-machine stop ecc-dev"
+alias status-ecc-dev="docker-machine status ecc-dev"
