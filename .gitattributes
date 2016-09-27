@@ -1,5 +1,7 @@
 #config is ssh config which is crypted for security on public github repo
 config filter=git-crypt diff=git-crypt
+.ssh/config filter=git-crypt diff=git-crypt
 config.json filter=git-crypt diff=git-crypt
 .npmrc filter=git-crypt diff=git-crypt
-.ssh-id/ filter=git-crypt diff=git-crypt
+# ssh folder with all info from mbp
+.ssh/ filter=git-crypt diff=git-crypt
