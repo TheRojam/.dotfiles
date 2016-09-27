@@ -7,7 +7,7 @@ Some are crypted, because these file are not public. The encryption is done with
 If you like to use it yourself you can look here [INSTALL.md of git-crypt](https://github.com/AGWA/git-crypt/blob/master/INSTALL.md).  
 But if your a  mac user - you can use homebrew with `brew install git-crypt`  
  -- similar on debian/ubuntu but with an older release.  
-
+> Keep in mind that you've first add the files you wanted to be encrypted, that you first add them to .gitattributes and than index them on your git-repo.
 
 More [about me](http://about.me/am91) ;)  
 
