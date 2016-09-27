@@ -5,3 +5,6 @@ config.json filter=git-crypt diff=git-crypt
 .npmrc filter=git-crypt diff=git-crypt
 # ssh folder with all info from mbp
 .ssh/id_rsa.pub filter=git-crypt diff=git-crypt
+.ssh/id_rsa filter=git-crypt diff=git-crypt
+.ssh/id_ubernauten.pub filter=git-crypt diff=git-crypt
+.ssh/id_ubernauten filter=git-crypt diff=git-crypt
