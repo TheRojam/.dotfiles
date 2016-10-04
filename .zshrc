@@ -71,7 +71,7 @@ ZSH_THEME="honukai"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx vi vim brew brew-cask git docker history cp sbt emoji-clock rand-quote chucknorris compleat)
+plugins=(osx vi vim brew brew-cask git git-extras docker history cp sbt compleat)
 #plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
@@ -118,3 +118,5 @@ export NVM_DIR="/Users/amueller/.nvm"
 alias start-ecc-dev="docker-machine start ecc-dev"
 alias stop-ecc-dev="docker-machine stop ecc-dev"
 alias status-ecc-dev="docker-machine status ecc-dev"
+
+#alias gcmsgs="git"
