@@ -42,6 +42,11 @@ Thumbs.db
 ## kdiff3 files ##
 *.orig
 
+## personal added OMZ-themes ##
+###############################
+bullet-train.zsh-theme
+honukai.zsh-theme
+
 # personal files ignore #
 #######################
 bugs.feature
