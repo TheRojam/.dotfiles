@@ -1,46 +1,76 @@
-call plug#begin('~/.vim/plugged')
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Make sure you use single quotes
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+"tabline plugin
+Plugin 'mkitt/tabline.vim'
+" tagbar
+Plugin 'majutsushi/tagbar'
+" synstastic - syntax errors
+Plugin 'vim-syntastic/syntastic'
+" vim-airline-themes via .vim-folder
+Plugin 'vim-airline/vim-airline-themes'
+" nerdtree from github
+Plugin 'scrooloose/nerdtree'
+Plugin 'gabrielelana/vim-markdown'
+Plugin 'groenewege/vim-less'
 
-" Group dependencies, vim-snippets depends on ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-master branch
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
-
-"vim-theme
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Add plugins to &runtimepath
-call plug#end()
-
-"vim.plug
-
-:map <F10> :w!<CR>:!aspell --lang=german check %<CR>:e! %<CR>
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"
+" colored syntax highlighting
 syntax on
-set ai
-set laststatus=2
-let g:airline_theme='molokai'
+" set airline statusline
+:set laststatus=2
+"turn powerline fonts on
+let g:airline_powerline_fonts = 1
+" set theme at start
+" let g:airline_theme='dark'
+let g:airline_theme='dark'
+
+" let g:airline"extensions"tabline"enabled = 1
+" let g:airline"extensions"tagbar"enabled = 1
+" let g:airline"extensions"syntastic"enabled =1
+
+	
+" => Backups ausschalten
+set nobackup 
+" => Zeile und Spalte anzeigen
+set ruler                  
+
+
+" =>  ~/.exrc nicht benutzen
+set noexrc                
+" => nicht piepsen, wenn man an Textbegrenzungen anstößt o.ä.
+set noerrorbells          
+" => den aktuellen Mode anzeigen
+set showmode              
+" => Zeilennummern anzeigen
+set nu
