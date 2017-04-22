@@ -1,12 +1,15 @@
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
 
-##zplug config && packages
+# if the init scipt doesn't exist
+if ! zgen saved; then
 
-source ~/.zplug/init.zsh
-zplug "zplug/zplug"
-zplug "robbyrussell/oh-my-zsh"
-# zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:*.zsh-theme
+  # specify plugins here
+  zgen oh-my-zsh
 
-
+  # generate the init script from plugins above
+  zgen save
+fi
 
 ##oh-my-zsh config
 
