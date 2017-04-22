@@ -1,0 +1,75 @@
+background yes
+use_xft yes
+xftfont Droid Sans:size=9
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour black
+double_buffer yes
+minimum_size 1 1
+maximum_width 250
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color gray
+default_shade_color 000000
+default_outline_color d9d7d6
+alignment tr
+gap_x 12
+gap_y 12
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+color1 red
+color2 white
+#color2 black
+color3 blue
+color4 green
+color5 gray
+##############################################
+#  Output
+##############################################
+TEXT
+$alignc$color3$nodename $color2
+$alignc${time %H:%M:%S} at ${time %d.%m.%Y}
+
+CPU: $alignr${cpu cpu0}%
+${if_match ${cpu cpu0} <=95}$color5 ${cpubar cpu0} ${else} ${if_match {$cpu} <=95}$color1 ${cpubar cpu0}${endif}${endif}
+$color2 RAM: $alignr$mem/$memmax
+$color5 $membar
+
+$color2 Prozess              $alignc CPU             $alignr RAM
+${top_mem name 1}  $alignc${top_mem cpu 1}    $alignr${top_mem mem 1}
+${top_mem name 2}  $alignc${top_mem cpu 2}    $alignr${top_mem mem 2}
+${top_mem name 3}  $alignc${top_mem cpu 3}    $alignr${top_mem mem 3}
+
+${if_match ${battery_percent BAT0} >= 90} $color4 Akku: ${battery_percent BAT0}% ${else} ${if_match ${battery_percent BAT0} <=10 } $color1 Akku: ${battery_percent BAT0}% ${else}$color2	 Akku: ${battery_percent BAT0}%  ${endif}${endif} $color2 $alignc-- $alignr$battery_time
+${if_match ${battery_percent BAT0} >= 90} $color4 $battery_bar ${else} ${if_match ${battery_percent BAT0} <=10 } $color1 $battery_bar ${else}$color2 $battery_bar  ${endif}${endif} $color2
+#$battery_bar
+
+${if_match ${addr enp0s25} = " "} LAN-IP $alignr${addr enp0s25} ${else}${if_match ${addr enp0s25} = "No Address"} $alignc >>No Ethernet connected<< $alignc >>LAN nicht aktiv<< ${endif}${endif}
+
+${execi 3600 curl -s "http://whatsmyip.net" -o ~/.cache/externalip.html -A "Mozilla/4.0"}External IP:$alignr${execi 3600 grep -o "IP</acronym> Address is <input type=\"text\" value=\"[^\"]*\" />" ~/.cache/externalip.html | cut -f 6 -s --delimiter=" " | cut -f 2 -s --delimiter="\""}
+
+${if_up wls1}
+wifi-IP: $alignr${addr wls1}
+${wireless_essid wls1} $alignc>-> $alignr${wireless_bitrate wls1}
+${else}$alignc>>Kein W-LAN aktiviert<<${endif}
+
+${if_up wwp0s29f7u4i7}
+UMTS-IP $alignr${addr wwp0s29f7u4i7}
+Download speed $alignr ${downspeed wwp0s29f7u4i7}/s
+Upload speed $alignr ${upspeed wwp0s29f7u4i7}/s
+Downloaded$alignr  ${totaldown wwp0s29f7u4i7}
+Uploaded$alignr  ${totalup wwp0s29f7u4i7}
+${else}$alignc>>Kein UMTS an<<${endif}
+
+$alignc Desktop $desktop ($desktop_name)
+
+$alignc Powered by Conky $conky_version

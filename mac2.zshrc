@@ -1,4 +1,3 @@
-<<<<<<< HEAD:mac.zsh
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
@@ -14,17 +13,24 @@ fi
 
 ##oh-my-zsh config
 
-=======
->>>>>>> 467734474846a245a02ab53db224528e7cda86d6:.zshrc
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/therojam/.oh-my-zsh
+export ZSH=/Users/amueller/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="honukai"
+#ZSH_THEME="ys"
+#powerlevel9k font mode
+#POWERLEVEL9K_MODE='awesome-fontconfig'
+#POWERLEVEL9K_MODE='flat'
+#OWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs )
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time os_icon)
+#:POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+#. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +55,7 @@ ZSH_THEME="honukai"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -68,11 +74,12 @@ ZSH_THEME="honukai"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize colored-man-pages archlinux history common-aliases command-not-found sublime sudo ssh-agent)
+plugins=(osx vi vim brew brew-cask git git-extras docker history cp sbt compleat)
+#plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
 
-# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -102,4 +109,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-archey3
+clear && /usr/local/bin/archey
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export NVM_DIR="/Users/amueller/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias start-ecc-dev="docker-machine start ecc-dev"
+alias stop-ecc-dev="docker-machine stop ecc-dev"
+alias status-ecc-dev="docker-machine status ecc-dev"
+
+#alias gcmsgs="git"
