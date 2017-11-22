@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/amueller/.oh-my-zsh
 
-source ~/.zplug/init.zsh
+# source ~/.zplug/init.zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -96,7 +96,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-clear && /usr/local/bin/archey
+	# archey removed for tmux usage > also its a bit nerving
+# clear && /usr/local/bin/archey
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
