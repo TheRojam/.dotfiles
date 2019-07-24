@@ -1,17 +1,5 @@
 [user]
+	name = therojam
 	email = github@therojam.tech
-	name = Anton Mueller
-[core]
-	excludesfile = /Users/amueller/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[gui]
-	recentrepo = /Users/amueller/git_repo/data-integration
-[commit]
-	template = /Users/amueller/.stCommitMsg
-[color]
-	ui = auto
+[url "git@github.com:"]
+	insteadOf = https://github.com/

@@ -14,12 +14,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
 "tabline plugin
 Plugin 'mkitt/tabline.vim'
 " tagbar
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 " synstastic - syntax errors
 Plugin 'vim-syntastic/syntastic'
 " vim-airline-themes via .vim-folder
@@ -29,12 +27,17 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'groenewege/vim-less'
-
 Plugin 'benmills/vimux'
 "Plugin 'tpope/vim-fugitive' " the ultimate git helper
 Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
-
-
+" Vim plugin for previewing markup files
+Plugin 'spf13/vim-preview'
+" Autopair/complete for brackets, 
+Plugin 'auto-pairs'
+Plugin 'lervag/vimtex'
+Plugin 'vim-latex/vim-latex'
+" A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plugin 'xuhdev/vim-latex-live-preview'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,24 +55,35 @@ filetype plugin indent on    " required
 "
 " colored syntax highlighting
 syntax on
+" set statusline for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " set airline statusline
-:set laststatus=2
+set laststatus=2
 "turn powerline fonts on
 let g:airline_powerline_fonts = 1
 " set theme at start
 " let g:airline_theme='dark'
 let g:airline_theme='dark'
 
-" let g:airline"extensions"tabline"enabled = 1
-" let g:airline"extensions"tagbar"enabled = 1
-" let g:airline"extensions"syntastic"enabled =1
-
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#syntastic#enabled =1
 	
 " => Backups ausschalten
 set nobackup 
 " => Zeile und Spalte anzeigen
 set ruler                  
-
+" keine Rechtschreibpruefung
+set nospell
+" su backspace als delete
+set backspace=indent,eol,start
 
 " =>  ~/.exrc nicht benutzen
 set noexrc                
@@ -79,3 +93,6 @@ set noerrorbells
 set showmode              
 " => Zeilennummern anzeigen
 set nu
+" => Encondig auf UTF-8
+set encoding=utf-8
+let g:livepreview_previewer = 'open -a Preview'
