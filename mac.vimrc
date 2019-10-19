@@ -1,18 +1,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+" personal Pluginlist
 Plugin 'tpope/vim-fugitive'
 "tabline plugin
 Plugin 'mkitt/tabline.vim'
@@ -28,7 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'groenewege/vim-less'
 Plugin 'benmills/vimux'
-"Plugin 'tpope/vim-fugitive' " the ultimate git helper
 Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
 " Vim plugin for previewing markup files
 Plugin 'spf13/vim-preview'
@@ -38,9 +30,11 @@ Plugin 'lervag/vimtex'
 Plugin 'vim-latex/vim-latex'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'kamykn/spelunker.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -64,12 +58,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 " set airline statusline
 set laststatus=2
-"turn powerline fonts on
+" turn powerline fonts on
 let g:airline_powerline_fonts = 1
 " set theme at start
-" let g:airline_theme='dark'
 let g:airline_theme='dark'
 
 let g:airline#extensions#tabline#enabled = 1
@@ -82,9 +76,10 @@ set nobackup
 set ruler                  
 " keine Rechtschreibpruefung
 set nospell
+" Rechtschreibprüfung in DE
+"set spell spelllang=de_de
 " su backspace als delete
 set backspace=indent,eol,start
-
 " =>  ~/.exrc nicht benutzen
 set noexrc                
 " => nicht piepsen, wenn man an Textbegrenzungen anstößt o.ä.
@@ -95,4 +90,8 @@ set showmode
 set nu
 " => Encondig auf UTF-8
 set encoding=utf-8
+" Live Preview LaTeX
 let g:livepreview_previewer = 'open -a Preview'
+
+" spelunker whitelist
+let g:spelunker_white_list_for_user = [ 'vimrc']
