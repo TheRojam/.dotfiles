@@ -54,7 +54,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx tmux vi vim brew git history cp compleat svn)
+plugins=(osx tmux vi vim brew git history cp completa)
 #plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
@@ -102,7 +102,7 @@ export NVM_DIR="/Users/amueller/.nvm"
 #alias vi="/usr/local/Cellar/vim"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export HOMEBREW_GITHUB_API_TOKEN=ee9fcd0d85c5655c0b2ff1b867bea456283b0edb
+export HOMEBREW_GITHUB_API_TOKEN=a638ea2861d1de4067761236dc1bea17233cefaf
 
 alias git='LANG=en_US.UTF-8 git'
 alias pip="pip3"
