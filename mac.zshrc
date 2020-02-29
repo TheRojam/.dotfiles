@@ -54,15 +54,17 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx tmux vi vim brew git history cp completa)
+plugins=(osx tmux aws fzf brew git history cp)
 #plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# $PATH vars
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/"
 # export MANPATH="/usr/local/man:$MANPATH"
 # Patht for tex live
 export PATH=/Library/TeX/texbin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,20 +93,15 @@ export LC_ALL=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-	# archey removed for tmux usage > also its a bit nerving
-# clear && /usr/local/bin/archey
-
-export NVM_DIR="/Users/amueller/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#alias vi="/usr/local/Cellar/vim"
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export HOMEBREW_GITHUB_API_TOKEN=a638ea2861d1de4067761236dc1bea17233cefaf
-
 alias git='LANG=en_US.UTF-8 git'
 alias pip="pip3"
 alias python='python3'
+
+export NVM_DIR="/Users/amueller/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+zstyle ':completion:*:*:aws' fzf-search-display true
+export HOMEBREW_GITHUB_API_TOKEN=06dbf0eba41ffed7bf91312e4d4865a6482f5008
 TERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
+export gitpath=$HOME/git_repo
