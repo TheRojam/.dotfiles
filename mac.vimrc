@@ -10,7 +10,7 @@ Plugin 'tpope/vim-fugitive'
 "tabline plugin
 Plugin 'mkitt/tabline.vim'
 " tagbar
-"Plugin 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 " synstastic - syntax errors
 Plugin 'vim-syntastic/syntastic'
 " vim-airline-themes via .vim-folder
@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " nerdtree from github
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'groenewege/vim-less'
 Plugin 'benmills/vimux'
@@ -31,6 +32,9 @@ Plugin 'vim-latex/vim-latex'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'kamykn/spelunker.vim'
+Plugin 'chrisbra/csv.vim'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'willthames/ansible-lint'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -69,7 +73,10 @@ let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#syntastic#enabled =1
-	
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " => Backups ausschalten
 set nobackup 
 " => Zeile und Spalte anzeigen
@@ -95,3 +102,4 @@ let g:livepreview_previewer = 'open -a Preview'
 
 " spelunker whitelist
 let g:spelunker_white_list_for_user = [ 'vimrc']
+"filetype plugin on
