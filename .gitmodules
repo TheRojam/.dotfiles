@@ -1,0 +1,3 @@
+[submodule "nicknisi-dotfile"]
+	path = dotfiles
+	url = git@github.com:nicknisi/dotfiles.git
