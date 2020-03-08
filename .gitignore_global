@@ -144,3 +144,9 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+
+# General / vagrant stuff
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+# *.log
