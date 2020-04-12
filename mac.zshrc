@@ -60,7 +60,7 @@ plugins=(osx docker tmux aws fzf brew git history cp)
 # User configuration
 
 # $PATH vars
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/:$HOME/bin/"
 # export MANPATH="/usr/local/man:$MANPATH"
 # Patht for tex live
 export PATH=/Library/TeX/texbin:$PATH
