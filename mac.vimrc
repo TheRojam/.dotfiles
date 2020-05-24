@@ -37,6 +37,7 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'willthames/ansible-lint'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'snipMate'
+Plugin 'timcharper/textile.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
