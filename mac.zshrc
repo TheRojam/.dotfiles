@@ -54,7 +54,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx docker tmux aws fzf brew git history cp)
+plugins=(osx sudo ansible docker tmux aws fzf brew git history cp)
 #plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
