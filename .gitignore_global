@@ -1,4 +1,17 @@
 *~
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
 ## .gitignore file from github-octocat
 # Compiled source #
 ###################
@@ -20,6 +33,7 @@
 *.jar
 *.rar
 *.tar
+*.tar.*
 *.zip
 
 # Logs and databases #
