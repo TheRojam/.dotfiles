@@ -1,4 +1,5 @@
 #ZSH_TMUX_AUTOSTART="true"
+zstyle :omz:plugins:ssh-agent identities id_ubernauten mac_uberspace id_macturris id_home.lab id_gitlab id_vebit discourse.test id_git id_stremote id_luniprise
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/amueller/.oh-my-zsh
 
@@ -54,7 +55,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx sudo ansible docker tmux aws fzf brew git history cp)
+plugins=(osx sudo ansible docker tmux aws fzf brew git history cp ssh-agent)
 #plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
