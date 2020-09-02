@@ -30,7 +30,7 @@ Plugin 'auto-pairs'
 Plugin 'lervag/vimtex'
 Plugin 'vim-latex/vim-latex'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
-Plugin 'xuhdev/vim-latex-live-preview'
+"Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'kamykn/spelunker.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'pearofducks/ansible-vim'
