@@ -28,3 +28,5 @@ alias startcnc='wine Data/CNC4.game -config "..\CNC4_German.SkuDef"'
 [ ! "$UID" = "0" ] && archey3 -c blue
 [  "$UID" = "0" ] && archey3 -c red
 PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

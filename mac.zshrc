@@ -1,6 +1,7 @@
 ZSH_TMUX_AUTOSTART="true"
 #zstyle :omz:plugins:ssh-agent identities id_ubernauten id_vebit_ed id_luniprise id_azuredevopMBP mac_uberspace id_macturris id_home.lab id_gitlab id_vebit discourse.test id_git id_stremote 
-zstyle :omz:plugins:ssh-agent lifetime 1W 
+#zstyle :omz:plugins:ssh-agent identities id_ubernauten id_git id_gitlab id_hetzner 
+#zstyle :omz:plugins:ssh-agent lifetime 1W 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/amueller/.oh-my-zsh
 
@@ -56,15 +57,20 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx sudo ansible docker tmux aws fzf brew git history cp ssh-agent)
+plugins=(osx sudo compleat ansible docker tmux aws fzf brew git history cp zsh-autosuggestions pip)
 #plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
 
 ## vars for python path
 
-export pyver=3.9
+export pyver="3.9"
 export pysubver="3.9.1_3"
+
+export GOPATH=$HOME/golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # $PATH vars
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/:$HOME/bin/"
@@ -73,7 +79,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/:
 export PATH=/Library/TeX/texbin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 ## python $pyver path
-export PATH="/uer/local/Cellar/python@$pyver/$pysubver/Frameworks/Python.framework/Versions/$pyver/bin"
+#export PATH="/uer/local/Cellar/python@$pyver/$pysubver/Frameworks/Python.framework/Versions/$pyver/bin"-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,8 +112,10 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias git='LANG=en_US.UTF-8 git'
 alias pip="pip3"
-alias python='python3'
+#alias python='python3'
+alias python='/usr/local/bin/python$pyver'
 alias alint="ansible-lint"
+alias mac="~/.tooling/mac-cli/mac"
 
 export NVM_DIR="/Users/amueller/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -117,3 +125,6 @@ zstyle ':completion:*:*:aws' fzf-search-display true
 export HOMEBREW_GITHUB_API_TOKEN=06dbf0eba41ffed7bf91312e4d4865a6482f5008
 TERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
 export gitpath=$HOME/git_repo
+
+source /usr/local/etc/bash_completion.d/az # azure cli bashcompletion sourcing
+source $HOME/.vars

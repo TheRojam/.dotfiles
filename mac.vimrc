@@ -9,36 +9,27 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 "tabline plugin
 Plugin 'mkitt/tabline.vim'
-" tagbar
-Plugin 'majutsushi/tagbar'
 " synstastic - syntax errors
 Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-vimlparser'
+Plugin 'pearofducks/ansible-vim'
 " vim-airline-themes via .vim-folder
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " nerdtree from github
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'groenewege/vim-less'
 Plugin 'benmills/vimux'
-Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
-" Vim plugin for previewing markup files
-Plugin 'spf13/vim-preview'
 " Autopair/complete for brackets, 
 Plugin 'auto-pairs'
 Plugin 'lervag/vimtex'
 Plugin 'vim-latex/vim-latex'
-" A Vim Plugin for Lively Previewing LaTeX PDF Output
-"Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'kamykn/spelunker.vim'
 Plugin 'chrisbra/csv.vim'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'willthames/ansible-lint'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'snipMate'
-Plugin 'timcharper/textile.vim'
+"Plugin 'snipMate'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'cespare/vim-toml'
+Plugin 'preservim/tagbar'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -54,9 +45,14 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
-" colored syntax highlighting
-syntax on
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#syntastic#enabled =1
+" turn powerline fonts on
+let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#tabline#enabled = 1
+
 " set statusline for syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -66,20 +62,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" set airline statusline
-set laststatus=2
-" turn powerline fonts on
-let g:airline_powerline_fonts = 1
-" set theme at start
-let g:airline_theme='dark'
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#syntastic#enabled =1
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " => Backups ausschalten
 set nobackup 
@@ -101,9 +83,13 @@ set showmode
 set nu
 " => Encondig auf UTF-8
 set encoding=utf-8
-" Live Preview LaTeX
-let g:livepreview_previewer = 'open -a Preview'
 
-" spelunker whitelist
-let g:spelunker_white_list_for_user = [ 'vimrc']
+set rtp+=/usr/local/opt/fzf
+
+syntax on
+
 "filetype plugin on
+"
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+" Tagbar Toggle
+" nmap <F8> :TagbarToggle<CR>
