@@ -12,3 +12,5 @@
 	defaultBranch = main 
 [pull]
 	rebase = false
+[core]
+	excludesfile = /Users/amueller/.gitignore_global
