@@ -17,6 +17,9 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " nerdtree from github
+Plugin 'preservim/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'ryanoasis/vim-devicons'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'groenewege/vim-less'
 Plugin 'benmills/vimux'
@@ -30,12 +33,16 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'cespare/vim-toml'
 Plugin 'preservim/tagbar'
+Plugin 'dpelle/vim-LanguageTool'
+Plugin 'ledger/vim-ledger'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -86,10 +93,43 @@ set encoding=utf-8
 
 set rtp+=/usr/local/opt/fzf
 
+set lcs+=space:·
 syntax on
+" Nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 
 "filetype plugin on
-"
+let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
 au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
-" Tagbar Toggle
-" nmap <F8> :TagbarToggle<CR>
+" Tagbar Toggle + settings
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_type_ansible = {
+	\ 'ctagstype' : 'ansible',
+	\ 'kinds' : [
+		\ 't:tasks'
+	\ ],
+	\ 'sort' : 0
+\}
+let g:tagbar_type_tf = {
+  \ 'ctagstype': 'tf',
+  \ 'kinds': [
+    \ 'r:Resource',
+    \ 'R:Resource',
+    \ 'd:Data',
+    \ 'D:Data',
+    \ 'v:Variable',
+    \ 'V:Variable',
+    \ 'p:Provider',
+    \ 'P:Provider',
+    \ 'm:Module',
+    \ 'M:Module',
+    \ 'o:Output',
+    \ 'O:Output',
+    \ 'f:TFVar',
+    \ 'F:TFVar'
+  \ ]
+\ }
