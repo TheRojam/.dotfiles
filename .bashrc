@@ -30,3 +30,4 @@ alias startcnc='wine Data/CNC4.game -config "..\CNC4_German.SkuDef"'
 PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
