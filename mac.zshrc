@@ -127,6 +127,5 @@ export HOMEBREW_GITHUB_API_TOKEN=06dbf0eba41ffed7bf91312e4d4865a6482f5008
 TERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
 export gitpath=$HOME/git_repo
 
-source /usr/local/etc/bash_completion.d/az # azure cli bashcompletion sourcing
 source $HOME/.vars
 
