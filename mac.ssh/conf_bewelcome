@@ -1,0 +1,36 @@
+Host gitlab.bewelcome.org
+
+  HostName gitlab.bewelcome.org 
+  Port 22
+  User therojam
+  IdentityFile ~/.ssh/id_bewelcome
+
+Host tiger.bewelcome.org
+
+  HostName tiger.bewelcome.org 
+  Port 22
+  User therojam
+  IdentityFile ~/.ssh/id_bewelcome
+
+Host bw-1
+
+  HostName 2a01:4f8:1c1c:9e9f::1
+  Port 22
+  User therojam
+  IdentityFile ~/.ssh/id_bewelcome
+
+Host bw-2
+
+  HostName 2a01:4f8:1c1c:9ea1::1 
+  Port 22
+  User therojam
+  IdentityFile ~/.ssh/id_bewelcome
+
+Host bw-3
+
+  HostName 2a01:4f8:1c1c:9e9d::1 
+  Port 22
+  User therojam
+  IdentityFile ~/.ssh/id_bewelcome
+
+# vim: ft=sshconfig

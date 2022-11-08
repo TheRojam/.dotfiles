@@ -1,0 +1,43 @@
+Host git.dezentrale.cloud
+
+	HostName   git.dezentrale.cloud
+	Port 2200
+      	User git 
+        IdentityFile ~/.ssh/id_dezentrale
+
+Host world.dezentrale.cloud
+
+	HostName   world.dezentrale.cloud
+	Port 4027 
+      	User therojam 
+        IdentityFile ~/.ssh/id_dezentrale
+
+Host hw4f.dezentrale.cloud
+
+	HostName hw4f.dezentrale.cloud
+	Port 4022 
+      	User therojam 
+        IdentityFile ~/.ssh/id_dezentrale
+
+Host virt2.dezentrale.cloud
+
+	HostName virt2.dezentrale.cloud
+	Port 4022 
+      	User therojam 
+        IdentityFile ~/.ssh/id_dezentrale
+
+# virtual machines von hw4f.dezentrale.cloud
+Host next.dezentrale.cloud
+
+	HostName   next.dezentrale.cloud
+	ProxyJump virt2.dezentrale.cloud 
+      	User therojam 
+        IdentityFile ~/.ssh/id_dezentrale
+
+Host ucs.dezentrale.cloud
+
+	HostName   ucs.dezentrale.cloud
+	ProxyJump hw4f.dezentrale.cloud 
+      	User therojam-admin
+        IdentityFile ~/.ssh/id_dezentrale
+# vim: ft=sshconfig
