@@ -1,8 +1,12 @@
 [user]
 	name = therojam
 	email = github@therojam.tech
+[url "git@codeberg.org:"]
+	insteadOf = https://codeberg.org/
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
