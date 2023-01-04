@@ -35,8 +35,19 @@ Plugin 'cespare/vim-toml'
 Plugin 'preservim/tagbar'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'ledger/vim-ledger'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+"Plugin 'vim-pandoc/vim-pandoc'
+"Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'chr4/nginx.vim'
+Plugin 'chr4/sslsecure.vim'
+Plugin 'juliosueiras/vim-terraform-completion'
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+Plugin 'phenomenes/ansible-snippets'
+Plugin 'm-kat/aws-vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'WolfgangMehner/bash-support'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -101,10 +112,20 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+" UltarSnipsConfig
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
 
 "filetype plugin on
+au BufRead,BufNewFile *.md set filetype=markdown
 let g:tagbar_ctags_bin = "/usr/local/bin/ctags"
-au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile *.yml set filetype=yaml.ansible
 " Tagbar Toggle + settings
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_type_ansible = {
@@ -133,3 +154,10 @@ let g:tagbar_type_tf = {
     \ 'F:TFVar'
   \ ]
 \ }
+
+let g:vimwiki_list = [{'path': '~/vim-notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:BASH_AuthorName   = 'Anton Mueller'
+let g:BASH_Email        = 'email@antonmueller.xyz'
+let g:BASH_Company      = 'Company Name'
+
