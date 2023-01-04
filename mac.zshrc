@@ -57,7 +57,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(macos sudo compleat ansible docker terraform tmux aws fzf brew git history cp zsh-autosuggestions pip)
+plugins=(macos sudo compleat docker terraform fzf brew git history zsh-autosuggestions)
 #plugins=(git osx docker git git-extras history web-search sublime cp repo sbt emoji-clock rand-quote chucknorris compleat)
 
 # User configuration
@@ -113,7 +113,7 @@ export EDITOR='vim'
 alias git='LANG=en_US.UTF-8 git'
 alias pip="pip3"
 #alias python='python3'
-alias python='/usr/local/bin/python$pyver'
+alias python="/usr/local/bin/python$pyver"
 alias alint="ansible-lint"
 alias mac="~/.tooling/mac-cli/mac"
 alias ctags=/usr/local/bin/ctags
@@ -122,8 +122,7 @@ export NVM_DIR="/Users/amueller/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-zstyle ':completion:*:*:aws' fzf-search-display true
-export HOMEBREW_GITHUB_API_TOKEN=06dbf0eba41ffed7bf91312e4d4865a6482f5008
+export HOMEBREW_GITHUB_API_TOKEN="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"
 TERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1
 export gitpath=$HOME/git_repo
 
