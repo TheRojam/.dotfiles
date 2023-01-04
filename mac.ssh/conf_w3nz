@@ -1,0 +1,9 @@
+# w3nz support 4 mastodon with leipzig.town
+
+Host leipzig.town
+
+  HostName leipzig.town 
+  User anton 
+  IdentityFile ~/.ssh/id_leipzigtown
+
+# vim: ft=sshconfig

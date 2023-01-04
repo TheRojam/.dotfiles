@@ -1,0 +1,8 @@
+Host iskfoto.cloud
+
+  HostName iskfoto.cloud
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_hetzner_ed
+
+# vim: ft=sshconfig
