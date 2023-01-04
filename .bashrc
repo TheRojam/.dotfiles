@@ -5,8 +5,8 @@
 # PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '
 # umask 022
 
-EDITOR="nano"
-VISUAL="nano" 
+EDITOR="vim"
+VISUAL="vim" 
 
 # You may uncomment the following lines if you want `ls' to be colorized:
  export LS_OPTIONS='--color=auto'
@@ -31,3 +31,11 @@ PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
+
+## vars for python path
+export pyver="3.9"
+export pysubver="3.9.1_3"
+## python $pyver path
+#export PATH="/uer/local/Cellar/python@$pyver/$pysubver/Frameworks/Python.framework/Versions/$pyver/bin"-
+#alias python='python3'
+alias python="/usr/local/bin/python$pyver"
